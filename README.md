@@ -8,6 +8,7 @@
 
 # 참고 자료
 
+* [책](https://sarabander.github.io/sicp/html/)
 * [가이드](https://github.com/minnsane/TeachYourselfCS-KR/blob/main/README.md)
 * [강의](https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter)
 * [레퍼런스](https://github.com/ivanjovanovic/sicp)
