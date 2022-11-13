@@ -14,7 +14,7 @@
 5. [브랜칭](#브랜칭)
 6. [지역 변수들](#지역-변수들)
 7. [반복하기 (Looping)](#반복하기-(Looping))
-8. [고차함수 (Higher Order Function)](#고차함수-(Higher Order-Function))
+8. [고차함수 (Higher Order Function)](#고차함수-(Higher-Order-Function))
 9. [입출력 (IO)](#입출력-(IO))
 10. [할당 (Assignment)](#할당-(Assignment))
 11. [문자, 문자열 (Char, String)](#문자,-문자열-(Char,-String))
@@ -24,7 +24,7 @@
 15. [구문 정의하기 (Defining Syntaxes)](#구문-정의하기-(Defining-Syntaxes))
 16. [계속 (Continuation)](#계속-(Continuation))
 17. [지연 계산 (Lazy Evaluation)](#지연-계산-(Lazy-Evaluation))
-18. [비결정론 ([Nondeterminism](https://ko.wikipedia.org/wiki/%EB%B9%84%EA%B2%B0%EC%A0%95%EB%A1%A0%EC%A0%81_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98))](#비결정론-([Nondeterminism](https://ko.wikipedia.org/wiki/%EB%B9%84%EA%B2%B0%EC%A0%95%EB%A1%A0%EC%A0%81_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)))
+18. [비결정론 (Nondeterminism)](#비결정론-(Nondeterminism))
 
 
 
@@ -79,5 +79,6 @@
 ## 지연 계산 (Lazy Evaluation)
 
 
-## 비결정론 ([Nondeterminism](https://ko.wikipedia.org/wiki/%EB%B9%84%EA%B2%B0%EC%A0%95%EB%A1%A0%EC%A0%81_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98))
+## 비결정론 (Nondeterminism)
+[비결정론적 알고리즘](https://ko.wikipedia.org/wiki/%EB%B9%84%EA%B2%B0%EC%A0%95%EB%A1%A0%EC%A0%81_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 
