@@ -1,0 +1,98 @@
+#+title: Procedures and the Processes They Generate
+
+#+begin_quote
+A procedure is a pattern for the local evolution of a computational process. It specifies how each stage of the process is built upon the previous stage. We would like to be able to make statements about the overall, or global, behavior of a process whose local evolution has been specified by a procedure. This is very difficult to do in general, but we can at least try to describe some typical patterns of process evolution.
+#+end_quote
+
+* 1.2.1 Liner Recursion and Iteration
+
+#+begin_src scheme
+(define (factorial n)
+  (if (= n 1)
+      1
+      (* n (factorial (- n 1)))))
+#+end_src
+
+#+begin_quote
+The expansion occurs as the process builds up a chain of deferred operations (in this case, a chain of multiplications). The contraction occurs as the operations are actually performed. This type of process, characterized by a chain of deferred operations, is called a recursive process.
+Carrying out this process requires that the interpreter keep track of the operations to be performed later on. In the computation of n!, the length of the chain of deferred multiplications, and hence the amount of information needed to keep track of it, grows linearly with n (is proportional to n), just like the number of steps. Such a process is called a linear recursive process.
+#+end_quote
+
+재귀일때는 지연되는 연산 정보를 기억하고 있어야 한다.
+
+#+begin_src scheme
+(define (factorial n)
+  (fact-iter 1 1 n))
+
+(define (fact-iter product counter max-count)
+  (if (> counter max-count)
+      product
+      (fact-iter (* counter product)
+                 (+ counter 1)
+                 max-count)))
+#+end_src
+
+#+begin_quote
+At each step, all we need to keep track of, for any n, are the current values of the variables product, counter, and max-count. We call this an iterative process. In general, an iterative process is one whose state can be summarized by a fixed number of state variables, together with a fixed rule that describes how the state variables should be updated as the process moves from state to state and an (optional) end test that specifies conditions under which the process should terminate. In computing n!, the number of steps required grows linearly with n. Such a process is called a linear iterative process.
+#+end_quote
+
+반복일 때는 매 반복마다 연산을 수행하고 그 결과값을 다음 반복으로 넘기기 때문에 지연 연산 스택이 쌓이지 않는다.
+
+반복일 경우 프로그램 변수는 반복 중 어떤 지점의 모든 상태 정보를 가지고 있다. 만약 반복 중간에 멈춘다해도 그 정보들을 넘기면 다시 계산을 그 지점부터 이어나갈 수 있다. 반면 재귀일 경우 그 중간 과정의 계산 값, 어디까지 계산했는가의 상태가 프로그램 변수로 저장되는 것이 아니라 인터프리터가 관리하는 숨겨진 값이다. 그 말인 즉슨 반복의 고리가 길수록 더 많은 정보를 관리해야 한다.
+
+** recursive process, recursive procedure
+
+프로시져가 재귀라고 말할 때, 문법적으로 프로시져가 자기 자신 프로시져를 참조할 때를 말한다.
+프로세스가 재귀라고 할 때는, 문법과 상관 없이 프로세스가 어떻게 발전되는가, 어떻게 이어지는가를 말한다.
+
+#+begin_quote
+One reason that the distinction between process and procedure may be confusing is that most implementations of common languages (including Ada, Pascal, and C) are designed in such a way that the interpretation of any recursive procedure consumes an amount of memory that grows with the number of procedure calls, even when the process described is, in principle, iterative. As a consequence, these languages can describe iterative processes only by resorting to special-purpose “looping constructs” such as do, repeat, until, for, and while.
+#+end_quote
+
+재귀 프로시저가 실행하는 프로세스가 반복일 수 있다.
+
+* 1.2.3 Orders of Growth
+
+One convenient way to describe this difference is to use the notion of order of growth to obtain a gross measure of the resources required by a process as the inputs become larger.
+
+
+Let n be a parameter that measures the size of the problem, and let R(n) be the amount of resources the process requires for a problem of size n.
+
+
+* 1.2.5 Greatest Common Divisors
+largest integer that divides both a and b with no remainder.
+
+The idea of the algorithm is based on the observation that, if r is the remainder when a is divided by b, then the common divisors of a and b are precisely the same as the common divisors of b and r. Thus, we can use the equation
+
+#+begin_quote
+GCD(a,b) = GCD(b,r)
+#+end_quote
+
+to successively reduce the problem of computing a GCD to the problem of computing the GCD of smaller and smaller pairs of integers. For example,
+
+#+begin_quote
+GCD(206,40) = GCD(40,6)
+            = GCD(6,4)
+            = GCD(4,2)
+            = GCD(2,0) = 2
+#+end_quote
+
+
+This method for computing the GCD is known as Euclid’s Algorithm.42
+
+#+begin_src scheme
+(define (gcd a b)
+  (if (= b 0)
+      a
+      (gcd b (remainder a b))))
+#+end_src
+
+
+* Testing for primality
+
+n  is prime if and only if n is its own smallest divisor
+
+#+begin_src scheme
+(define (prime? n)
+  (= n (smallest-divisor n)))
+#+end_src

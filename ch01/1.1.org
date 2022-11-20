@@ -1,0 +1,43 @@
+#+title: The Elements of Programming
+
+프로그래밍의 원소
+
+#+begin_quote
+Every powerful language has three mechanisms for accomplishing this:
+
+- primitive expressions, which represent the simplest entities the language is concerned with,
+- means of combination, by which compound elements are built from simpler ones, and
+- means of abstraction, by which compound elements can be named and manipulated as units.
+
+In programming, we deal with two kinds of elements: procedures and data. (Later we will discover that they are really not so distinct.)
+#+end_quote
+
+좋은 언어는 다음과 같은 기능을 갖춘다.
+
+- 원시 식, 언어가 신경쓰는 가장 단순한 대상.
+- 조합 수단, 단순한 것들로부터 조합될 수 있는 원소들.
+- 추상화 수단, 하나의 단위들로 이름 짓고 조작할 수 있는 원소들.
+
+  프로시져와 데이터 두 가지의 원소가 있다. 둘은 크게 다르지 않다. ( 왜? )
+
+
+* 조합식 평가
+
+절차적으로 사고하는 것과 관련된 문제들을 분리하는 것.
+조합식을 평가할 때 인터프리터는 다음과 같은 절차를 따른다.
+
+1. 조합식의 부분식을 평가한다.
+2. 맨 왼쪽의 부분식(operator)에 나머지 부분식들(operands)을 적용한다.
+
+   조합의 모든 원소에 값을 평가하는 과정을 거친 다음에야 조합식을 평가할 수 있다.
+   따라서 평가 규칙은 기본적으로 재귀이다. 평가 과정 중의 하나로서,
+   규칙 자체를 불러야 할 필요가 있기 때문이다.
+
+   #+begin_src scheme
+(* (+ 2 (* 4 6)) (+ 3 5 7))
+   #+end_src
+
+   위의 식을 평가하기 위해서는 트리 구조의 말단 노드부터 평가해야 한다.
+   말단 노드란 그로부터 새로운 가지가 뻗어나오지 않은 노드이다.
+   평가된 피연산자(노드)의 값은 위쪽으로 여과되어 나간다.
+   이러한 평가 규칙은 트리 축적(tree accumulation)이라고 알려진 과정의 한 예이다.
