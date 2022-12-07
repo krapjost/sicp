@@ -29,33 +29,32 @@ Programs are typically designed to model complex phenomena, and more often than 
 #+end_quote
 
 - 프로그래밍 언어에서 복합 데이터를 왜 원하는가?
-  #+begin_quote
-  to elevate the conceptual level at which we can design our programs, to increase the modularity of our designs, and to enhance the expressive power of our language.
+#+begin_quote
+to elevate the conceptual level at which we can design our programs, to increase the modularity of our designs, and to enhance the expressive power of our language.
 
-  프로그램을 설계할 수 있는 개념적 수준을 높이고, 설계의 모듈성을 높이고, 언어의 표현력을 향상시키기 위해.
-  #+end_quote
+프로그램을 설계할 수 있는 개념적 수준을 높이고, 설계의 모듈성을 높이고, 언어의 표현력을 향상시키기 위해.
+#+end_quote
 
-  프로시져와 데이터의 추상화는 동사와 명사의 추상화와 같다고 봐도 될 것 같다.
-  가장 원시적인 동사를 'Eat'이라고 한다면 이와 같은 원시 동사들을 조합한 새로운 동사를 정의할 수 있다. 예를 들어 '특별한 날에 많은 사람들과 먹고 마시는 행위'를 'Feast'라는 동사로 추상화할 수 있다.
+프로시져와 데이터의 추상화는 동사와 명사의 추상화와 같다고 봐도 될 것 같다.
+가장 원시적인 동사를 'Eat'이라고 한다면 이와 같은 원시 동사들을 조합한 새로운 동사를 정의할 수 있다. 예를 들어 '특별한 날에 많은 사람들과 먹고 마시는 행위'를 'Feast'라는 동사로 추상화할 수 있다.
 
-  데이터의 추상화의 예를 생각해보면 '보리 혹은 밀 따위를 효모를 사용해 발효시켜 구운 것'을 '빵'이라는 명사로 축약해 정의할 수 있다. 그리고 그 '빵'이라는 데이터로 '케이크', '피자' 등의 더 높은 차원으로 추상화된 명사들도 만들 수 있다.
+데이터의 추상화의 예를 생각해보면 '보리 혹은 밀 따위를 효모를 사용해 발효시켜 구운 것'을 '빵'이라는 명사로 축약해 정의할 수 있다. 그리고 그 '빵'이라는 데이터로 '케이크', '피자' 등의 더 높은 차원으로 추상화된 명사들도 만들 수 있다.
 
-  #+begin_quote
-  It would be much better if we could “glue together” a numerator and denominator to form a pair—a compound data object—that our programs could manipulate in a way that would be consistent with regarding a rational number as a single conceptual unit.
+#+begin_quote
+It would be much better if we could “glue together” a numerator and denominator to form a pair—a compound data object—that our programs could manipulate in a way that would be consistent with regarding a rational number as a single conceptual unit.
 
-  유리수를 단일 개념 단위로 간주하는 것과 일치하는 방식으로 프로그램이 조작할 수 있는 쌍(복합 데이터 개체)을 형성하기 위해 분자와 분모를 "함께 붙일" 수 있다면 훨씬 더 좋을 것입니다.
-  #+end_quote
+유리수를 단일 개념 단위로 간주하는 것과 일치하는 방식으로 프로그램이 조작할 수 있는 쌍(복합 데이터 개체)을 형성하기 위해 분자와 분모를 "함께 붙일" 수 있다면 훨씬 더 좋을 것입니다.
+#+end_quote
 
-  ~1/2 + 2/3~ 을 계산할 때, 각 분자와 분모를 정수로 계산하고, 각 분자, 분모간의 관계까지 추적해가며 계산하는 식을 짜는 것은 복잡하고 어렵다. 1/2를 1/2 자체로 계산할 수 있게 데이터를 추상화하는 것이 더 낫다.
+~1/2 + 2/3~ 을 계산할 때, 각 분자와 분모를 정수로 계산하고, 각 분자, 분모간의 관계까지 추적해가며 계산하는 식을 짜는 것은 복잡하고 어렵다. 1/2를 1/2 자체로 계산할 수 있게 데이터를 추상화하는 것이 더 낫다.
 
-  #+begin_quote
-  The general technique of isolating the parts of a program that deal with how data objects are represented from the parts of a program that deal with how data objects are used is a powerful design methodology called data abstraction.
+#+begin_quote
+The general technique of isolating the parts of a program that deal with how data objects are represented from the parts of a program that deal with how data objects are used is a powerful design methodology called data abstraction.
 
-  데이터 객체가 사용되는 방법을 처리하는 프로그램 부분에서 데이터 객체가 표현되는 방식을 처리하는 프로그램 부분을 분리하는 일반적인 기술은 데이터 추상화라는 강력한 설계 방법론입니다.
-  #+end_quote
+데이터 객체가 사용되는 방법을 처리하는 프로그램 부분에서 데이터 객체가 표현되는 방식을 처리하는 프로그램 부분을 분리하는 일반적인 기술은 데이터 추상화라는 강력한 설계 방법론입니다.
+#+end_quote
 
-  '데이터가 어떻게 사용되는가'로부터 '데이터가 어떻게 표현되는가'를 분리해내는 것이 데이터 추상화이다. 우리가 커피를 내릴 때 필요한 데이터는 볶은 원두와 물이다. 함수는 원두를 가는 것과 그 위에 뜨거운 물을 붓는 것이다. 여기에서 원두는 추상화된 상태일 것이다. 원두를 더 작은 원소로 나눠볼 수 있기 때문이다. '커피 내리기'에서 사용되는 원두라는 데이터는 맥락적으로 '볶아져 있는 상태의 커피나무의 씨앗'이다. 여기서는 '볶아져 있다'라는 상태와 '커피나무의 씨앗'이라는 객체가 복합적으로 존재한다. 이 씨앗으로부터 커피를 만들 때 항상 긴 의미들의 조합을 사용해야 하면 머리 아프니 이 조합을 추상화해 원두라고 표현하게 된다. 그러고 나면 이 원두를 사용할 때 당연히 볶아져 있는 상태이겠거니 추정할 수 있다.
-
+'데이터가 어떻게 사용되는가'로부터 '데이터가 어떻게 표현되는가'를 분리해내는 것이 데이터 추상화이다. 우리가 커피를 내릴 때 필요한 데이터는 볶은 원두와 물이다. 필요한 함수는 원두를 가는 행동과 그 위에 뜨거운 물을 행동이다. 여기에서 원두는 이미 추상화된 상태의 데이터일 것이다. 원두를 더 작은 원소로 나눠볼 수 있기 때문이다. '커피 내리기' 행위에서 사용되는 원두라는 데이터는 맥락적으로 '볶아져 있는 상태의 커피콩'이다. 여기서는 '볶아져 있다'라는 상태와 '커피콩'이라는 객체가 복합적으로 존재한다. 이로부터 커피를 만들 때 항상 긴 의미들의 조합을 사용해야 하면 머리 아프니 이 조합을 추상화해 원두라고 표현하게 된다. 그러고 나면 원두를 사용할 때 당연히 볶아져 있는 상태이겠거니 추정할 수 있다.
 
 #+begin_quote
 The use of compound data leads to a real increase in the expressive power of our programming language. Consider the idea of forming a “linear combination” ax+by.
@@ -63,57 +62,57 @@ The use of compound data leads to a real increase in the expressive power of our
 복합 데이터를 사용하면 프로그래밍 언어의 표현력이 실제로 증가합니다. "선형 조합" ax+by를 계산하는 식을 생각해봅시다.
 #+end_quote
 
-  #+begin_src scheme
-  (define (linear-combination a b x y)
-  (+ (* a x) (* b y)))
-  #+end_src
-
-  정수들이라면 문제가 없다. 하지만 인자들이 정수 뿐만이 아니라 유리수, 복소수, 다항식등 다양한 형태의 값을 받을 수 있게 만들려면 어떻게 해야할까?
-
-  #+begin_src scheme
+#+begin_src scheme
 (define (linear-combination a b x y)
-  (add (mul a x) (mul b y)))
-  #+end_src
+(+ (* a x) (* b y)))
+#+end_src
 
-  원시적인 함수인 +, *을 추상화한 add, mul을 만들 수 있다.
-  이때 ~linear-combination~ 이 알아야 할 것은 'add와 mul이 인자들의 형에 따른 적절한 계산을 할 것'이라는 사실 뿐이다.
+정수들이라면 문제가 없다. 하지만 인자들이 정수 뿐만이 아니라 유리수, 복소수, 다항식등 다양한 형태의 값을 받을 수 있게 만들려면 어떻게 해야할까?
 
-  - 근데 여기서 추상화되는 것은 데이터가 아니라 프로시져가 아닌가?
-    위의 예로 보면 자바스크립트는 이미 원시 함수 + 등의 추상화가 이뤄진 것 같다.
-    스킴에서 (+ "a" "b") 는 에러이지만 ("a" + "b")는 "ab" 이니 들어오는 데이터에 따라 적절한 계산을 해주는 것 같다.
+#+begin_src scheme
+(define (linear-combination a b x y)
+(add (mul a x) (mul b y)))
+#+end_src
 
-    #+begin_quote
-    There are many possible kinds of glue. Indeed, we will discover how to form compound data using no special “data” operations at all, only procedures. This will further blur the distinction between “procedure” and “data,” which was already becoming tenuous toward the end of chapter 1.
+원시적인 함수인 +, *을 추상화한 add, mul을 만들 수 있다.
+이때 ~linear-combination~ 이 알아야 할 것은 'add와 mul이 인자들의 형에 따른 적절한 계산을 할 것'이라는 사실 뿐이다.
 
-    복합적인 데이터를 형성하는 방식에는 많은 종류의 접착제가 존재한다. 실제로 우리는 특별한 "데이터" 작업을 전혀 사용하지 않고 절차만 사용하여 복합 데이터를 형성하는 방법을 발견할 것입니다. 이렇게 하면 1장 끝에서 이미 모호해지고 있던 "프로시져"와 "데이터" 사이의 구분이 더욱 흐려질 것입니다.
-    #+end_quote
+ - 근데 여기서 추상화되는 것은 데이터가 아니라 프로시져가 아닌가?
+   위의 예로 보면 자바스크립트는 이미 원시 함수 + 등의 추상화가 이뤄진 것 같다.
+   스킴에서 (+ "a" "b") 는 에러이지만 ("a" + "b")는 "ab" 이니 들어오는 데이터에 따라 적절한 계산을 해주는 것 같다.
 
-    #+begin_quote
-    One key idea in dealing with compound data is the notion of closure—that the glue we use for combining data objects should allow us to combine not only primitive data objects, but compound data objects as well. Another key idea is that compound data objects can serve as conventional interfaces for combining program modules in mix-and-match ways
+#+begin_quote
+There are many possible kinds of glue. Indeed, we will discover how to form compound data using no special “data” operations at all, only procedures. This will further blur the distinction between “procedure” and “data,” which was already becoming tenuous toward the end of chapter 1.
 
-    복합 데이터를 다루는 핵심 아이디어 중 하나는 클로저의 개념입니다. 즉, 데이터 객체를 결합하는 데 사용하는 접착제를 사용하면 기본 데이터 개체뿐만 아니라 복합 데이터 개체도 결합할 수 있어야 합니다. 또 다른 핵심 아이디어는 복합 데이터 객체가 믹스 앤 매치 방식으로 프로그램 모듈을 결합하기 위한 관습적인 인터페이스 역할을 할 수 있다는 것입니다.
-    #+end_quote
+복합적인 데이터를 형성하는 방식에는 많은 종류의 접착제가 존재한다. 실제로 우리는 특별한 "데이터" 작업을 전혀 사용하지 않고 절차만 사용하여 복합 데이터를 형성하는 방법을 발견할 것입니다. 이렇게 하면 1장 끝에서 이미 모호해지고 있던 "프로시져"와 "데이터" 사이의 구분이 더욱 흐려질 것입니다.
+#+end_quote
 
-    1. 클로저를 활용하면 원시 데이터 뿐 아니라 복합 데이터의 결합도 가능하다.
-    2. 복합 데이터 객체는 모듈을 갈아 끼울 수 있게 돕는 인터페이스 역할을 할 수 있다.
+#+begin_quote
+One key idea in dealing with compound data is the notion of closure—that the glue we use for combining data objects should allow us to combine not only primitive data objects, but compound data objects as well. Another key idea is that compound data objects can serve as conventional interfaces for combining program modules in mix-and-match ways
 
-    #+begin_quote
-    We will then augment the representational power of our language by introducing symbolic expressions-data whose elementary parts can be arbitrary symbols rather than only numbers.
+복합 데이터를 다루는 핵심 아이디어 중 하나는 클로저의 개념입니다. 즉, 데이터 객체를 결합하는 데 사용하는 접착제를 사용하면 기본 데이터 개체뿐만 아니라 복합 데이터 개체도 결합할 수 있어야 합니다. 또 다른 핵심 아이디어는 복합 데이터 객체가 믹스 앤 매치 방식으로 프로그램 모듈을 결합하기 위한 관습적인 인터페이스 역할을 할 수 있다는 것입니다.
+#+end_quote
 
-    그런 다음 상징적 표현(기본 부분이 숫자가 아닌 임의의 기호일 수 있는 데이터)을 도입하여 우리 언어의 표현력을 강화할 것입니다.
-    #+end_quote
+  1. 클로저를 활용하면 원시 데이터 뿐 아니라 복합 데이터의 결합도 가능하다.
+  2. 복합 데이터 객체는 모듈을 갈아 끼울 수 있게 돕는 인터페이스 역할을 할 수 있다.
 
-    #+begin_quote
-    Next we will take up the problem of working with data that may be represented differently by different parts of a program. This leads to the need to implement generic operations, which must handle many different types of data.
+#+begin_quote
+We will then augment the representational power of our language by introducing symbolic expressions-data whose elementary parts can be arbitrary symbols rather than only numbers.
 
-    다음으로 우리는 프로그램의 다른 부분에 의해 다르게 표현될 수 있는 데이터로 작업하는 문제를 다룰 것입니다. 이로 인해 다양한 유형의 데이터를 처리해야 하는 일반 작업을 구현해야 합니다.
-    #+end_quote
+그런 다음 상징적 표현(기본 부분이 숫자가 아닌 임의의 기호일 수 있는 데이터)을 도입하여 우리 언어의 표현력을 강화할 것입니다.
+#+end_quote
 
-    #+begin_quote
-    In particular, we introduce data-directed programming as a technique that allows individual data representations to be designed in isolation and then combined additively (i.e., without modification)
+#+begin_quote
+Next we will take up the problem of working with data that may be represented differently by different parts of a program. This leads to the need to implement generic operations, which must handle many different types of data.
 
-    특히 개별 데이터 표현을 개별적으로 설계한 다음 추가로(즉, 수정 없이) 결합할 수 있는 기술로 데이터 지향 프로그래밍을 소개합니다.
-    #+end_quote
+다음으로 우리는 프로그램의 다른 부분에 의해 다르게 표현될 수 있는 데이터로 작업하는 문제를 다룰 것입니다. 이로 인해 다양한 유형의 데이터를 처리해야 하는 일반 작업을 구현해야 합니다.
+#+end_quote
+
+#+begin_quote
+In particular, we introduce data-directed programming as a technique that allows individual data representations to be designed in isolation and then combined additively (i.e., without modification)
+
+특히 개별 데이터 표현을 개별적으로 설계한 다음 추가로(즉, 수정 없이) 결합할 수 있는 기술로 데이터 지향 프로그래밍을 소개합니다.
+#+end_quote
   
 
 * 이번 챕터에서 앞으로 배울 것 정리
